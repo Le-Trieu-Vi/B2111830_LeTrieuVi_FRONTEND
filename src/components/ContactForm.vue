@@ -55,14 +55,14 @@
 			</label>
 		</div>
 		<div class="form-group">
-			<button class="btn btn-primary">Lưu</button>
+			<button class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Lưu</button>
 			<button
 				v-if="contact._id"
 				type="button"
 				class="ml-2 btn btn-danger"
 				@click="deleteContact"
 			>
-				Xóa
+			<i class="fa-solid fa-user-minus"></i>Xóa
 			</button>
 		</div>
 	</Form>

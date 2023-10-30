@@ -21,6 +21,12 @@
                     <i class="fas fa-trash"></i> Xóa tất cả
                 </button>
             </div>
+            <div class="mt-3 row justify-content-around align-items-center">
+				<button class="favorite-btn btn btn-sm btn-primary" @click="gotoFavoriteContact" style="background-color: rgb(254 101 240);">
+                    <i class="fa-solid fa-bookmark"></i> Các liên hệ yêu thích
+				</button>
+			</div>
+			{{ message }}
         </div>
         <div class="mt-3 col-md-6">
             <div v-if="activeContact">
@@ -28,7 +34,7 @@
                     Chi tiết Liên hệ
                     <i class="fas fa-address-card"></i>
                 </h4>
-                <ContactCard :contact="activeContact" />
+               <ContactCard :contact="activeContact" />
                 <router-link
 					:to="{
 						name: 'contact.edit',
@@ -123,6 +129,9 @@ export default {
         goToAddContact() {
             this.$router.push({ name: "contact.add" });
         },
+        gotoFavoriteContact() {
+			this.$router.push({ name: "favorite" });
+		},
     },
     mounted() {
         this.refreshList();
@@ -134,6 +143,17 @@ export default {
 .page {
     text-align: left;
     max-width: 750px;
+}
+.btn:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    text-shadow: 1px 1px 2px #427388;
+}
+
+span:hover {
+    opacity: 0.7;
 }
 </style>
 

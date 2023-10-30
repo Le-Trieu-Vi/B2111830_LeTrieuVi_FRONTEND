@@ -27,6 +27,12 @@ const routes = [
 		props: true // truyền các biến trong $route.params vào làm props
 	},
 
+    {
+		path: '/favorite',
+		name: 'favorite',
+		component: () => import('@/views/ContactFavorite.vue'),
+        props: true
+	},
 ];
 
 const router = createRouter({
